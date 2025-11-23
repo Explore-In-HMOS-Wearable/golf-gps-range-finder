@@ -1,15 +1,16 @@
 import { GolfHole } from '../model/GolfHole';
 import { calculateDistance, getCurrentLocation } from '../service/LocationService';
 import { bearingToCompassDirection, calculateBearing } from '../util/GeoUtils';
+import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
-@ObservedV2
+@Observed
 export class RoundViewModel {
-  @Trace public currentHole: number = 1;
-  @Trace public strokes: number = 0;
-  @Trace public totalHoles: number = 18;
-  @Trace public tempoActive: boolean = false;
-  @Trace public scoreCard: number[] = [];
-  @Trace public holes: GolfHole[] = [];
+  public currentHole: number = 1;
+  public strokes: number = 0;
+  public totalHoles: number = 18;
+  public tempoActive: boolean = false;
+  public scoreCard: number[] = [];
+  public holes: GolfHole[] = [];
 
   private userLat: number = 0;
   private userLon: number = 0;
@@ -65,10 +66,10 @@ export class RoundViewModel {
     for (let i = 1; i <= this.totalHoles; i++) {
       this.holes.push({
         number: i,
-        lat: baseLat + Math.random() * 0.001,
-        lon: baseLon + Math.random() * 0.001,
+        lat: baseLat + secureRandom() * 0.001,
+        lon: baseLon +  secureRandom() * 0.001,
         par: 4,
-        avgStroke: Math.floor(Math.random() * 4) + 3
+        avgStroke: Math.floor(secureRandom() * 4) + 3
       });
     }
   }
@@ -117,4 +118,17 @@ export class RoundViewModel {
   public get currentHoleAverageStroke(): number {
     return this.currentHoleData?.avgStroke || 0;
   }
+}
+
+export function secureRandom(): number {
+  const random = cryptoFramework.createRandom();
+  const bytes = random.generateRandomSync(4).data;
+  const value =
+    (bytes[0] << 24) |
+      (bytes[1] << 16) |
+      (bytes[2] << 8) |
+      (bytes[3]);
+
+  const unsignedValue = value >>> 0;
+  return unsignedValue / 0xFFFFFFFF;
 }

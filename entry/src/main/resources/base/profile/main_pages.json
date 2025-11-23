@@ -1,8 +1,5 @@
 {
   "src": [
-    "pages/Index",
-    "pages/ClubDetailView",
-    "pages/RoundView",
-    "pages/HomeView"
+    "pages/Index"
   ]
 }

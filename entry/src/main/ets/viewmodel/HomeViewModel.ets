@@ -1,10 +1,10 @@
 import { GolfClub } from '../model/GolfClub';
 import { calculateDistance, getCurrentLocation } from '../service/LocationService';
 
-@ObservedV2
+@Observed
 export class HomeViewModel {
-  @Trace public clubs: GolfClub[] = [];
-  @Trace public isLoading: boolean = false;
+  public clubs: GolfClub[] = [];
+  public isLoading: boolean = false;
 
   constructor() {
     this.loadClubsByLocation();

@@ -1,9 +1,9 @@
 import { GolfClub } from '../model/GolfClub';
 import { ClubDetail } from '../model/ClubDetail';
 
-@ObservedV2
+@Observed
 export class ClubDetailViewModel {
-  @Trace public club: ClubDetail = {
+  public club: ClubDetail = {
     id: 0,
     name: '',
     lat: 0,
