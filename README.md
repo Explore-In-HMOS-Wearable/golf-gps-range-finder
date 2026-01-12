@@ -7,10 +7,10 @@ GolfGPSRangeFinder is a **HarmonyOS Next** wearable app that helps golfers locat
 # Preview
 
 <div>
-  <img src="./resources/golfoutput4.png" width="24%"/>
-  <img src="./resources/golfoutput1.png" width="24%"/>
-  <img src="./resources/golfoutput2.png" width="24%"/>
-  <img src="./resources/golfoutput3.png" width="24%"/>
+  <img src="./screenshots/golfoutput4.png" width="24%"/>
+  <img src="./screenshots/golfoutput1.png" width="24%"/>
+  <img src="./screenshots/golfoutput2.png" width="24%"/>
+  <img src="./screenshots/golfoutput3.png" width="24%"/>
 </div>
 
 # Use Cases
@@ -52,7 +52,6 @@ GolfGPSRangeFinder is a **HarmonyOS Next** wearable app that helps golfers locat
 │ └── LocationService.ets
 ├── util/
 │ ├── GeoUtils.ets
-│ ├── NavigationHelper.ets
 │ └── StringHelper.ets
 ├── viewmodel/
 │ ├── HomeViewModel.ets

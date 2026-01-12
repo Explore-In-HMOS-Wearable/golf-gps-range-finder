@@ -27,7 +27,7 @@ export struct RoundView {
         if (this.vm.currentHole < this.vm.totalHoles) {
           this.vm.nextHole()
         }
-      },
+      }
     });
   }
 

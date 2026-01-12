@@ -10,7 +10,7 @@ import {
 @Component
 export struct StarterView {
   @Consume('pageStack') pageStack: NavPathStack;
-  @State message: string = 'GolfGPSFinder';
+  message: string = 'GolfGPSFinder';
   bottomOptions: ArcButtonOptions = new ArcButtonOptions({})
 
   aboutToAppear() {

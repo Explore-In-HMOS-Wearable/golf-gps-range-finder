@@ -5,5 +5,5 @@ export function asString(res: Resource): string {
   if (res && typeof res === 'object' && typeof res.toString === 'function') {
     return res.toString();
   }
-  return '' + res;
+  return `${res}`;
 }
